@@ -8,14 +8,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/* <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>header & navbar stuff go here</p>
-        </header> */}
+        <header className="App-header">
+          <img src={"./perimeterlogo.png"} className="App-logo" alt="logo" />
+          <Button name="Overlay"/>
+          <Button name="Settings"/>
+          <Button name="Location"/>
+          {/* <Button /> */}
+        </header>
         
         <Gmap ref={el => (this.mapComponent = el)} />
         
-        <button
+        {/* <button
           onClick={() => {
             if (this.mapComponent) {
               this.mapComponent.addHexagon();
@@ -23,7 +26,7 @@ class App extends Component {
           }}
         >
           Button from parent
-        </button>
+        </button> */}
       </div>
     );
   }

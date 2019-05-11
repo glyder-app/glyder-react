@@ -110,8 +110,8 @@ class Gmap extends Component {
       <div
         id="map"
         style={{
-          height: "100vh",
-          width: "100vh"
+          height: "93vh",
+          width: "100%"
         }}
       />
     );
