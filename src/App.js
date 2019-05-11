@@ -13,12 +13,12 @@ class App extends Component {
           <p>header & navbar stuff go here</p>
         </header> */}
         
-        <Gmap ref={el => (this.mapComponent = el)} />
+        <Gmap ref={el => (this.mapComponent = el)}/>
         
         <button
           onClick={() => {
             if (this.mapComponent) {
-              this.mapComponent.addHexagon();
+              this.mapComponent.toggleSat();
             }
           }}
         >

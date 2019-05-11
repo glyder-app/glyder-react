@@ -14,11 +14,26 @@ class Gmap extends Component {
   componentDidMount() {
     const google = window.google;
 
-    var map;
+    this.mapOptions = {
+      zoom: 12,
+      center: new google.maps.LatLng(39.7596, -121.6219),
+      mapTypeId: "OSM",
+      mapTypeControlOptions: {
+        mapTypeIds: [
+          "OSM",
+          google.maps.MapTypeId.ROADMAP,
+          google.maps.MapTypeId.SATELLITE,
+          google.maps.MapTypeId.HYBRID,
+          google.maps.MapTypeId.TERRAIN
+        ],
+        style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
+      }
+    };
+    this.map = new google.maps.Map(document.getElementById("map"), this.mapOptions);
+    var map = this.map
 
-    var josefov = new google.maps.LatLng(39.7596, -121.6219);
     //Define OSM as base layer in addition to the default Google layers
-    var osmMapType = new google.maps.ImageMapType({
+    this.osmMapType = new google.maps.ImageMapType({
       getTileUrl: function(coord, zoom) {
         return (
           "http://tile.openstreetmap.org/" +
@@ -38,7 +53,7 @@ class Gmap extends Component {
     });
 
     //Define custom WMS tiled layer
-    var SHLayer = new google.maps.ImageMapType({
+    this.SHLayer = new google.maps.ImageMapType({
       getTileUrl: function(coord, zoom) {
         var proj = map.getProjection();
         var zfactor = Math.pow(2, zoom);
@@ -62,7 +77,7 @@ class Gmap extends Component {
 
         //base WMS URL
         var url =
-          "https://services.sentinel-hub.com/ogc/wms/1e352d52-3b22-4a57-a51c-5cb89cf0d3b9";
+          "https://services.sentinel-hub.com/ogc/wms/eddadba7-1a0a-4485-9a96-af519e7eb274";
         url += "?REQUEST=GetMap"; //WMS operation
         url += "&SERVICE=WMS"; //WMS service
         url += "&VERSION=1.1.1"; //WMS version
@@ -78,31 +93,20 @@ class Gmap extends Component {
       tileSize: new google.maps.Size(512, 512)
     });
 
-    var mapOptions = {
-      zoom: 12,
-      center: new google.maps.LatLng(39.7596, -121.6219),
-      mapTypeId: "OSM",
-      mapTypeControlOptions: {
-        mapTypeIds: [
-          "OSM",
-          google.maps.MapTypeId.ROADMAP,
-          google.maps.MapTypeId.SATELLITE,
-          google.maps.MapTypeId.HYBRID,
-          google.maps.MapTypeId.TERRAIN
-        ],
-        style: google.maps.MapTypeControlStyle.DROPDOWN_MENU
-      }
-    };
-    map = new google.maps.Map(document.getElementById("map"), mapOptions);
-    map.mapTypes.set("OSM", osmMapType);
-    map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+    this.map.mapTypes.set("OSM", this.osmMapType);
+    this.map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
     //add WMS layer
-    map.overlayMapTypes.push(SHLayer);
+    this.map.overlayMapTypes.push(this.SHLayer);
   }
 
-  addHexagon = () => {
-    document.getElementById("map").innerHTML = "HEXAGON";
-  };
+  toggleSat = () => {
+    if(this.map.overlayMapTypes.length > 0){
+      this.map.overlayMapTypes.clear()
+    }
+    else {
+      this.map.overlayMapTypes.push(this.SHLayer)
+    }
+  }
 
   render() {
     return (
