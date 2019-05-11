@@ -15,14 +15,14 @@ class App extends Component {
         
         <Gmap ref={el => (this.mapComponent = el)}/>
         
-        <button
+        <button class="toggleButton"
           onClick={() => {
             if (this.mapComponent) {
               this.mapComponent.toggleSat();
             }
           }}
         >
-          Button from parent
+          Toggle Satellite
         </button>
       </div>
     );

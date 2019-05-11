@@ -31,3 +31,17 @@
     transform: rotate(360deg);
   }
 }
+
+.toggleButton {
+  background-color: white;
+  border: 0px;
+  position: fixed;
+  top: 70px;
+  padding: 20px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 3px 0px #0009;
+  left: 10px;
+  font-size: 17px;
+  font-family: roboto;
+  font-weight: bold;
+}
