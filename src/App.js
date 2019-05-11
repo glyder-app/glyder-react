@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from "./logo.png";
 import "./App.css";
 import Gmap from "./Gmap.js";
 import Button from "./Button.js";
@@ -24,6 +23,17 @@ class App extends Component {
         >
           Toggle Satellite
         </button>
+
+        <button class="toggleFire"
+          onClick={() => {
+            if (this.mapComponent) {
+              this.mapComponent.toggleFire();
+            }
+          }}
+        >
+          Toggle Fire
+        </button>
+
       </div>
     );
   }
