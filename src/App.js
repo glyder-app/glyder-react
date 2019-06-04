@@ -4,6 +4,9 @@ import "./styles/App.css";
 import ToggleIconAndTitle from "./components/ToggleIconAndTitle.js"
 import OSMap from './components/OSMap.js'
 import SearchBarWrapper from './components/SearchBarWrapper.js'
+import location_icon from './img/location_icon.jpg';
+import data_toggle_icon from './img/data_toggle_icon.png'
+import road_closures_icon from './img/road_closures_icon.png'
 
 class App extends React.Component {
 	render(){
@@ -23,13 +26,13 @@ class App extends React.Component {
 				</div>
 				<div className="UIWrapper">
 					<div id="mainSearchBarWrapper">
-						<SearchBarWrapper dataOverlayNames={["WIND", "FUEL TYPE", "TEMPERATURE", "HUMIDITY"]} iconSrc='data_toggle_icon.png' iconAlt='DATA'/>
+						<SearchBarWrapper dataOverlayNames={["WIND", "FUEL TYPE", "TEMPERATURE", "HUMIDITY"]} iconSrc={data_toggle_icon} iconAlt='DATA'/>
 					</div>
 					<div className="toggleRLWrapper">
-						<ToggleIconAndTitle src="./location_icon.jpg" title="RESPONDER LOCATIONS" />
+						<ToggleIconAndTitle src={location_icon} title="RESPONDER LOCATIONS" />
 					</div>	
 					<div className="toggleRCWrapper">
-						<ToggleIconAndTitle src="./road_closures_icon.png" title="ROAD CLOSURES" />
+						<ToggleIconAndTitle src={road_closures_icon} title="ROAD CLOSURES" />
 					</div>
 				</div>
 			</div>
