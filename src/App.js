@@ -1,13 +1,15 @@
-import Leaflet from 'leaflet'
+import Leaflet from 'react-leaflet'
 import React, { StrictMode } from 'react'
-import SimpleExample from './components/simple.js'
+import OSMap from './components/OSMap.js'
+// import Search from './components/search.js'
 import './App.css';
 
 
 function App() {
   return (
     <div className="App">
-      <SimpleExample></SimpleExample>
+      <OSMap>
+      </OSMap>
     </div>
   );
 }
