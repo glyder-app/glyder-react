@@ -1,0 +1,25 @@
+.component-ToggleIconAndTitle {
+	background: rgba(150, 150, 150, 0);
+	height: 40px;
+	display: inline-block;
+}
+
+.component-ToggleIconAndTitle_Title {
+	background: rgba(0, 0, 0, 0);
+	padding: 0px;
+	font-size: 17px;
+	font-family: roboto;
+	display: inline-block;
+	margin: 10px 10px 0px 0px;
+	float:left;
+}
+
+.component-ToggleIconAndTitle_Icon {
+	background: rgba(255, 255, 255, 1);
+	border: 0px;
+	padding: 0px;
+	width: 40px;
+	border-radius: 18px;
+	box-shadow: 0px 0px 3px 0px #0009;
+	display: inline-block;
+}

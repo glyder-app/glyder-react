@@ -1,0 +1,16 @@
+.component-ToggleIcon {
+	
+}
+
+.component-ToggleIcon_Icon {
+  background-color: white;
+  border: 0px;
+  position: fixed;
+  padding: 0px;
+  width: 40px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 3px 0px #0009;
+  font-size: 17px;
+  font-family: roboto;
+  font-weight: bold;
+}
