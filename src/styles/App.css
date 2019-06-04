@@ -54,13 +54,26 @@
 
 .toggleRLWrapper {
 	position: absolute;
-	bottom: 30px;
+	width:20vw;
+	height:10vh;
+	bottom: 20px;
 	right: 10px;
 }
 
 .toggleRCWrapper {
 	position: absolute;
-	bottom: 100px;
+	/* align-self: right */
+	width:20vw;
+	height:10vh;
+	bottom: 80px;
+	right: 10px;
+}
+
+.toggleFPWrapper {
+	position: absolute;
+	width:20vw;
+	height:10vh;
+	bottom: 140px;
 	right: 10px;
 }
 
