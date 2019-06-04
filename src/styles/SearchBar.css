@@ -1,0 +1,46 @@
+.component-SearchBar {
+	background-color: rgba(255, 255, 255, 0.75);
+	padding: 5px;
+	box-shadow: 0px 0px 5px 0px #0009;
+	border-radius: 12px;
+	width: 100%;
+	z-index: 1;
+	height: 40px;
+	border-color: rgba(75, 75, 75, 0.6);
+	border-style: solid;
+	border-width: 1px;
+}
+
+.component-Separator {
+	width: 3px;
+	height: 40px;
+	background-color: rgba(120, 120, 120, 1);
+	box-shadow: 0px 0px 5px 0px #0009;
+	border-radius: 2px;
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+	float: left;
+}
+
+.component-SearchBarInput {
+	background-color: rgba(100, 100, 100, 0);
+	border-radius: 8px;
+	border-style: none;
+	font-family: roboto;
+	font-size: 25px;
+	width: calc(100% - 100px);
+	display: inline-block;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+.component-DropDownToggle {
+	display: inline-block;
+	border: 0px;
+	padding: 0px;
+	width: 40px;
+	height: 40px;
+	float:left;
+	margin-left: 5px;
+}

@@ -1,16 +1,30 @@
 .component-ToggleIconAndTitle {
-	background: rgba(150, 150, 150, 0);
-	height: 40px;
+	background: rgba(255, 255, 255, 1);
 	display: inline-block;
+	border-radius: 12px;
+	box-shadow: 0px 0px 5px 0px #0009;
+	padding: 5px;
+	z-index: 1;
+	border-color: rgba(75, 75, 75, 0.6);
+	border-style: solid;
+	border-width: 1px;
+	height: 40px;
+	/* background: rgba(220, 220, 220, 0.75); */
+	/* height: 40px; */
+	/* border-radius: 18px; */
+	/* box-shadow: 0px 0px 5px 0px #0009; */
+	/* padding: 3px; */
+	/* display: inline-block; */
+	/* z-index: 1; */
 }
 
 .component-ToggleIconAndTitle_Title {
 	background: rgba(0, 0, 0, 0);
 	padding: 0px;
-	font-size: 17px;
+	font-size: 16px;
 	font-family: roboto;
 	display: inline-block;
-	margin: 10px 10px 0px 0px;
+	margin: 12px 10px 0px 5px;
 	float:left;
 }
 
@@ -19,6 +33,7 @@
 	border: 0px;
 	padding: 0px;
 	width: 40px;
+	height: 40px;
 	border-radius: 18px;
 	box-shadow: 0px 0px 3px 0px #0009;
 	display: inline-block;

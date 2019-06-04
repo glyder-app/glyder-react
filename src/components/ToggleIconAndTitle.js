@@ -22,7 +22,7 @@ class ToggleIconAndTitle extends Component {
     return (
       <div className="component-ToggleIconAndTitle">
 		<p className="component-ToggleIconAndTitle_Title">{this.props.title}</p>
-		<input className="component-ToggleIconAndTitle_Icon" type="image" src={this.props.src} onClick={this.handleClick}></input>
+		<input className="component-ToggleIconAndTitle_Icon" type="image" src={this.props.src} alt={this.props.title} onClick={this.handleClick}></input>
       </div>
     );
   }
