@@ -7,16 +7,47 @@ import fire_icon from "./img/fire_icon.jpg";
 import location_icon from "./img/location_icon.jpg";
 import data_toggle_icon from "./img/data_toggle_icon.png";
 import road_closures_icon from "./img/road_closures_icon.png";
+import MyLocation from "./components/MyLocation.js";
 
 class App extends React.Component {
-  // a state & a function to toggle fire
+  //   a state & a function to toggle fire
   state = {
-    showFire: true
+    showFire: true,
+    showLocation: false
   };
 
   toggleFire = () => {
     this.setState({ showFire: !this.state.showFire });
   };
+
+  toggleLocation = () => {
+    this.setState({ showLocation: !this.state.showLocation });
+  };
+
+  //   state = {
+  //     showFire: true,
+  //     hasLocation: false,
+  //     latlng: {
+  //       lat: 39.7596,
+  //       lng: -121.6239
+  //     }
+  //   };
+
+  // mapRef = createRef<Map>()
+
+  //   handleClick = () => {
+  //     const map = this.mapRef.current;
+  //     if (map != null) {
+  //       map.leafletElement.locate();
+  //     }
+  //   };
+
+  //   handleLocationFound = e => {
+  //     this.setState({
+  //       hasLocation: true,
+  //       latlng: e.latlng
+  //     });
+  //   };
 
   render() {
     //TODO: MAP -
@@ -31,7 +62,11 @@ class App extends React.Component {
     return (
       <div className="FRApp">
         <div className="MapWrapper">
-          <OSMap showFire={this.state.showFire} />
+          <OSMap
+            latlng={this.state.latlng}
+            showFire={this.state.showFire}
+            showLocation={this.state.showLocation}
+          />
         </div>
         <div className="UIWrapper">
           <div id="mainSearchBarWrapper">
@@ -53,10 +88,17 @@ class App extends React.Component {
               onClick={this.toggleFire}
             />
           </div>
-          <div className="toggleRLWrapper">
+          {/* <div className="toggleRLWrapper">
             <ToggleIconAndTitle
               src={location_icon}
               title="RESPONDER LOCATIONS"
+            />
+          </div> */}
+          <div className="toggleRLWrapper">
+            <ToggleIconAndTitle
+              src={location_icon}
+              title="MY CURRENT LOCATIONS"
+              onClick={this.toggleLocation}
             />
           </div>
           <div className="toggleRCWrapper">
