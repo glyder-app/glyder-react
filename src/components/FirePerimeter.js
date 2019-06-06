@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Map, Marker, Popup, Polygon } from "react-leaflet";
+import React from "react";
+import { Polygon } from "react-leaflet";
 
 function FirePerimeter(props) {
   return props.show ? (

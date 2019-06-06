@@ -2,8 +2,6 @@
 
 import React, { createRef, Component } from "react";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
-import MyLocation from "./MyLocation.js";
-import Search from "./search.js";
 import FirePerimeter from "./FirePerimeter.js";
 
 class OSMap extends Component {
@@ -11,28 +9,21 @@ class OSMap extends Component {
     lat: 39.7596,
     lng: -121.6219,
     zoom: 13,
-    latlng: { lat: 39.7596, lng: -121.6219 },
+    locationLatlng: { lat: 39.7596, lng: -121.6219 },
     hasLocatoin: true
   };
 
+  //create a ref to the map compoenent mounted
   mapRef = createRef();
-
   map = this.mapRef.current;
 
-  // handleClick = () => {
-  //   const map = this.mapRef.current;
-  //   if (map != null) {
-  //     map.leafletElement.locate();
-  //   }
-  //   console.log("handleClick called");
-  // };
-
+  // functions for finding user's current location
   handleLocationFound = e => {
     this.setState({
       hasLocation: true,
-      latlng: e.latlng
+      locationLatlng: e.latlng
     });
-    console.log("handle location found called");
+    console.log("location found");
   };
 
   componentDidUpdate(prevProps) {
@@ -41,7 +32,7 @@ class OSMap extends Component {
       if (map != null) {
         map.leafletElement.locate();
       }
-      console.log("handleClick called");
+      console.log("finding location");
     }
   }
 
@@ -60,8 +51,9 @@ class OSMap extends Component {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        <Marker position={this.state.latlng}>
-          <Popup>You are here</Popup>
+        {/* add a marker at the current location found  */}
+        <Marker position={this.state.locationLatlng}>
+          <Popup>My current location</Popup>
         </Marker>
 
         <FirePerimeter show={this.props.showFire} />

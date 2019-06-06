@@ -1,4 +1,4 @@
-import React, { StrictMode } from "react";
+import React from "react";
 import "./styles/App.css";
 import ToggleIconAndTitle from "./components/ToggleIconAndTitle.js";
 import OSMap from "./components/OSMap.js";
@@ -7,7 +7,6 @@ import fire_icon from "./img/fire_icon.jpg";
 import location_icon from "./img/location_icon.jpg";
 import data_toggle_icon from "./img/data_toggle_icon.png";
 import road_closures_icon from "./img/road_closures_icon.png";
-import MyLocation from "./components/MyLocation.js";
 
 class App extends React.Component {
   //   a state & a function to toggle fire
