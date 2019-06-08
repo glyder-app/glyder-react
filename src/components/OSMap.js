@@ -2,8 +2,9 @@
 
 import React, { createRef, Component } from "react";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
-import '../styles/OSMap.css'; // Tell Webpack that Toggle.js uses these styles
+import "../styles/OSMap.css"; // Tell Webpack that Toggle.js uses these styles
 import FirePerimeter from "./FirePerimeter.js";
+import FRLocations from "./FRLocations.js";
 
 class OSMap extends Component {
   state = {
@@ -44,7 +45,6 @@ class OSMap extends Component {
         center={position}
         zoom={this.state.zoom}
         ref={this.mapRef}
-        onClick={this.handleClick}
         onLocationfound={this.handleLocationFound}
       >
         <TileLayer
@@ -59,6 +59,7 @@ class OSMap extends Component {
 
         <FirePerimeter show={this.props.showFire} />
         {/* <MyLocation /> */}
+        <FRLocations show={this.props.showFRLocations} />
       </Map>
     );
   }

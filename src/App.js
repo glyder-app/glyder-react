@@ -12,7 +12,8 @@ class App extends React.Component {
   //   a state & a function to toggle fire
   state = {
     showFire: true,
-    showLocation: false
+    showLocation: false,
+    showFRLocations: false
   };
 
   toggleFire = () => {
@@ -22,6 +23,14 @@ class App extends React.Component {
   toggleLocation = () => {
     this.setState({ showLocation: !this.state.showLocation });
   };
+
+  toggleFRLocations = () => {
+    this.setState({ showFRLocations: !this.state.showFRLocations });
+  };
+
+  //   toggleLocation = () => {
+  //     this.setState({ showLocation: !this.state.showLocation });
+  //   };
 
   //   state = {
   //     showFire: true,
@@ -65,6 +74,7 @@ class App extends React.Component {
             latlng={this.state.latlng}
             showFire={this.state.showFire}
             showLocation={this.state.showLocation}
+            showFRLocations={this.state.showFRLocations}
           />
         </div>
         <div className="UIWrapper">
@@ -87,12 +97,13 @@ class App extends React.Component {
               onClick={this.toggleFire}
             />
           </div>
-          {/* <div className="toggleRLWrapper">
+          <div className="toggleFRLWrapper">
             <ToggleIconAndTitle
               src={location_icon}
               title="RESPONDER LOCATIONS"
+              onClick={this.toggleFRLocations}
             />
-          </div> */}
+          </div>
           <div className="toggleRLWrapper">
             <ToggleIconAndTitle
               src={location_icon}

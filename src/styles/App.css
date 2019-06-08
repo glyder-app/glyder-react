@@ -36,68 +36,76 @@
 }
 
 .MapWrapper {
-	position: absolute;
-	width:100vw;
-	height:100vh;
-	top: 0px;
-	left: 0px;
-	z-index: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
 }
 
 .UIWrapper {
-	position: absolute;
-	width:100vw;
-	height:100vh;
-	top: 0px;
-	left: 0px;
-	z-index: 0;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
 }
 
 .toggleRLWrapper {
-	position: absolute;
-	width:20vw;
-	height:10vh;
-	bottom: 20px;
-	right: 10px;
+  position: absolute;
+  width: 20vw;
+  height: 10vh;
+  bottom: 20px;
+  right: 10px;
+}
+
+.toggleFRLWrapper {
+  position: absolute;
+  width: 20vw;
+  height: 10vh;
+  bottom: 200px;
+  right: 10px;
 }
 
 .toggleRCWrapper {
-	position: absolute;
-	/* align-self: right */
-	width:20vw;
-	height:10vh;
-	bottom: 80px;
-	right: 10px;
+  position: absolute;
+  /* align-self: right */
+  width: 20vw;
+  height: 10vh;
+  bottom: 80px;
+  right: 10px;
 }
 
 .toggleFPWrapper {
-	position: absolute;
-	width:20vw;
-	height:10vh;
-	bottom: 140px;
-	right: 10px;
+  position: absolute;
+  width: 20vw;
+  height: 10vh;
+  bottom: 140px;
+  right: 10px;
 }
 
 #mainSearchBarWrapper {
-	position: absolute;
-	top: 18px;
-	left: 50px;
-	right: 50px;
-	display: inline-block;
+  position: absolute;
+  top: 18px;
+  left: 50px;
+  right: 50px;
+  display: inline-block;
 }
 
 #component-Panel_Color_WIND {
-	background-color: rgba(120, 120, 120, 1)
+  background-color: rgba(120, 120, 120, 1);
 }
 
 #component-Panel_Color_FUEL\ TYPE {
-	background-color: rgba(139, 0, 139, 1)
+  background-color: rgba(139, 0, 139, 1);
 }
 
 #component-Panel_Color_TEMPERATURE {
-	background-color: rgba(255, 140, 0, 1)
+  background-color: rgba(255, 140, 0, 1);
 }
 
 #component-Panel_Color_HUMIDITY {
-	background-color: rgba(139, 139, 0, 1)
+  background-color: rgba(139, 139, 0, 1);
 }
