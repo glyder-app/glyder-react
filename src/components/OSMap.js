@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react'
 import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
+import '../styles/OSMap.css'; // Tell Webpack that Toggle.js uses these styles
 import Search from './search.js'
 
 

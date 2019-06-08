@@ -11,7 +11,7 @@ class SearchBar extends Component {
 		</div>
 		<div className="component-Separator">
 		</div>
-		<input className="component-SearchBarInput" type="text"></input>
+		<input className="component-SearchBarInput" type="text" placeholder="Search"></input>
 	  </div>
     );
   }

@@ -11,11 +11,6 @@ class App extends React.Component {
 				//	Fire Overlay
 				//	Data Overlay
 				//	Responder Geo Markers
-		
-				//TODO: UI - 
-				//	Search Bar
-				//	Data Overlay Menu
-				
 		return (
 			<div className="FRApp">
 				<div className="MapWrapper">
