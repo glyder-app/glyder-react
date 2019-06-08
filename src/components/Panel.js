@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import '../styles/Panel.css'; // Tell Webpack that Toggle.js uses these styles
+import React, { Component } from "react";
+import "../styles/Panel.css"; // Tell Webpack that Toggle.js uses these styles
 
 class Panel extends Component {
-	
   constructor(props) {
 	  super(props);
 	  this.selectDisplay = this.selectDisplay.bind(this);
@@ -27,4 +26,4 @@ class Panel extends Component {
   }
 }
 
-export default Panel
+export default Panel;

@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
-import '../styles/DropDownMenu.css'; // Tell Webpack that Toggle.js uses these styles
+import React, { Component } from "react";
+import "../styles/DropDownMenu.css"; // Tell Webpack that Toggle.js uses these styles
 import Panel from "./Panel.js";
 
 class DropDownMenu extends Component {
-	
   constructor(props) {
 	  super(props);
 	  	  
-	  //React Silliness
 	  this.buildTable = this.buildTable.bind(this);
 	  this.handleClick = this.handleClick.bind(this);
 	  this.state = {
@@ -15,7 +13,7 @@ class DropDownMenu extends Component {
 		  selectedPanel: -1,
 	  };
   }
-  
+
   buildTable() {
   	  var table = [];
 	  const maxI = this.props.panelNames.length;
@@ -45,14 +43,12 @@ class DropDownMenu extends Component {
   render() {	
     return (
       <div className="component-DropDownMenu">
-		<table className="component-DropDownMenu_Table">
-			<tbody>
-				{this.buildTable()}
-			</tbody>
-		</table>
+        <table className="component-DropDownMenu_Table">
+          <tbody>{this.buildTable()}</tbody>
+        </table>
       </div>
     );
   }
 }
 
-export default DropDownMenu
+export default DropDownMenu;
