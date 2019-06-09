@@ -75,48 +75,40 @@ class App extends React.Component {
             showFire={this.state.showFire}
             showLocation={this.state.showLocation}
             showFRLocations={this.state.showFRLocations}
+            dragging={true}
+            touchZoom={true}
           />
         </div>
-        <div className="UIWrapper">
-          <div id="mainSearchBarWrapper">
-            <SearchBarWrapper
-              dataOverlayNames={[
-                "WIND",
-                "FUEL TYPE",
-                "TEMPERATURE",
-                "HUMIDITY"
-              ]}
-              iconSrc={data_toggle_icon}
-              iconAlt="DATA"
-            />
-          </div>
-          <div className="toggleFPWrapper">
-            <ToggleIconAndTitle
-              src={fire_icon}
-              title="FIRE PERIMETER"
-              onClick={this.toggleFire}
-            />
-          </div>
-          <div className="toggleFRLWrapper">
-            <ToggleIconAndTitle
-              src={location_icon}
-              title="RESPONDER LOCATIONS"
-              onClick={this.toggleFRLocations}
-            />
-          </div>
-          <div className="toggleRLWrapper">
-            <ToggleIconAndTitle
-              src={location_icon}
-              title="MY CURRENT LOCATIONS"
-              onClick={this.toggleLocation}
-            />
-          </div>
-          <div className="toggleRCWrapper">
-            <ToggleIconAndTitle
-              src={road_closures_icon}
-              title="ROAD CLOSURES"
-            />
-          </div>
+        <div id="mainSearchBarWrapper">
+          <SearchBarWrapper
+            dataOverlayNames={["WIND", "FUEL TYPE", "TEMPERATURE", "HUMIDITY"]}
+            iconSrc={data_toggle_icon}
+            iconAlt="DATA"
+          />
+        </div>
+        <div className="toggleFPWrapper">
+          <ToggleIconAndTitle
+            src={fire_icon}
+            title="FIRE PERIMETER"
+            onClick={this.toggleFire}
+          />
+        </div>
+        <div className="toggleFRLWrapper">
+          <ToggleIconAndTitle
+            src={location_icon}
+            title="RESPONDER LOCATIONS"
+            onClick={this.toggleFRLocations}
+          />
+        </div>
+        <div className="toggleRLWrapper">
+          <ToggleIconAndTitle
+            src={location_icon}
+            title="MY CURRENT LOCATIONS"
+            onClick={this.toggleLocation}
+          />
+        </div>
+        <div className="toggleRCWrapper">
+          <ToggleIconAndTitle src={road_closures_icon} title="ROAD CLOSURES" />
         </div>
       </div>
     );
