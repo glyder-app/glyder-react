@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "../styles/DropDownMenu.css"; // Tell Webpack that Toggle.js uses these styles
-import Panel from "./Panel.js";
 
 class DropDownMenu extends Component {
   render() {	
