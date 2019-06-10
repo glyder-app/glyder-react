@@ -8,17 +8,17 @@ import location_icon from "./img/location_icon.jpg";
 import FRIcon from "./img/firefighter.png";
 import data_toggle_icon from "./img/data_toggle_icon.png";
 import road_closures_icon from "./img/road_closures_icon.png";
-import Panel from "./components/Panel.js"
+import Panel from "./components/Panel.js";
 
 class App extends React.Component {
   //   a state & a function to toggle fire
-  
+
   state = {
     showFire: true,
     showLocation: false,
     showFRLocations: false,
     showRoadClosures: false,
-	selectedPanel: -1
+    selectedPanel: -1
   };
 
   toggle = key => this.setState({ [key]: !this.state[key] });
@@ -67,49 +67,57 @@ class App extends React.Component {
   //       latlng: e.latlng
   //     });
   //   };
-  
+
   windSpeedOpacity = () => {
-	  if (this.state.selectedPanel === 0) {
-		  return 0.5;
-	  } else {
-		  return 0;
-	  }
-  }
+    if (this.state.selectedPanel === 0) {
+      return 0.5;
+    } else {
+      return 0;
+    }
+  };
 
   tempOpacity = () => {
-	  if (this.state.selectedPanel === 2) {
-		  return 0.5;
-	  } else {
-		  return 0;
-	  }
-  }
-  
+    if (this.state.selectedPanel === 2) {
+      return 0.5;
+    } else {
+      return 0;
+    }
+  };
+
   buildTable(panelNames) {
-  	  var table = [];
-	  const maxI = panelNames.length;
-	  for (let i = 0; i < maxI; i++) {
-		  // Panel Colors are an array of strings where each string is an rgba value
-		  // EX "rgba(255, 255, 255, 1)"
-		  const name = panelNames[i];
-		  const toggledOn = this.state.selectedPanel === i;
-		  table.push(
-			<tr key={i}><td>
-				{<Panel title={name} Engaged={toggledOn} onClick={() => this.handleOverlayMenuClick(i)}/>}	
-			</td></tr>
-		  );
-	  }
-	  return table;
+    var table = [];
+    const maxI = panelNames.length;
+    for (let i = 0; i < maxI; i++) {
+      // Panel Colors are an array of strings where each string is an rgba value
+      // EX "rgba(255, 255, 255, 1)"
+      const name = panelNames[i];
+      const toggledOn = this.state.selectedPanel === i;
+      table.push(
+        <tr key={i}>
+          <td>
+            {
+              <Panel
+                title={name}
+                Engaged={toggledOn}
+                onClick={() => this.handleOverlayMenuClick(i)}
+              />
+            }
+          </td>
+        </tr>
+      );
+    }
+    return table;
   }
-  
+
   handleOverlayMenuClick(i) {
-	  const prevPanel = this.state.selectedPanel;
-	  if (prevPanel == i) {
-		  this.setState({selectedPanel: -1});
-	  } else {
-		  this.setState({selectedPanel: i});
-	  }
+    const prevPanel = this.state.selectedPanel;
+    if (prevPanel == i) {
+      this.setState({ selectedPanel: -1 });
+    } else {
+      this.setState({ selectedPanel: i });
+    }
   }
-  
+
   render() {
     //TODO: MAP -
     //	Fire Overlay
@@ -129,18 +137,22 @@ class App extends React.Component {
             showLocation={this.state.showLocation}
             showFRLocations={this.state.showFRLocations}
             showRoadClosures={this.state.showRoadClosures}
-            mapState={this.state.mapState}
             dragging={true}
             touchZoom={true}
-			windSpeedOpacity={this.windSpeedOpacity()}
-			tempOpacity={this.tempOpacity()}
+            windSpeedOpacity={this.windSpeedOpacity()}
+            tempOpacity={this.tempOpacity()}
           />
         </div>
         <div id="mainSearchBarWrapper">
           <SearchBarWrapper
             iconSrc={data_toggle_icon}
             iconAlt="DATA"
-			table={this.buildTable(["WIND", "FUEL TYPE", "TEMPERATURE", "HUMIDITY"])}
+            table={this.buildTable([
+              "WIND",
+              "FUEL TYPE",
+              "TEMPERATURE",
+              "HUMIDITY"
+            ])}
           />
         </div>
         <div className="toggleFPWrapper">
@@ -148,7 +160,7 @@ class App extends React.Component {
             src={fire_icon}
             title="FIRE PERIMETER"
             onClick={() => this.toggle("showFire")}
-			Engaged={this.state.showFire}
+            Engaged={this.state.showFire}
           />
         </div>
         <div className="toggleFRLWrapper">
@@ -156,7 +168,7 @@ class App extends React.Component {
             src={FRIcon}
             title="RESPONDER LOCATIONS"
             onClick={() => this.toggle("showFRLocations")}
-			Engaged={this.state.showFRLocations}
+            Engaged={this.state.showFRLocations}
           />
         </div>
         <div className="toggleRLWrapper">
@@ -164,7 +176,7 @@ class App extends React.Component {
             src={location_icon}
             title="MY LOCATION"
             onClick={() => this.toggle("showLocation")}
-			Engaged={this.state.showLocation}
+            Engaged={this.state.showLocation}
           />
         </div>
         <div className="toggleRCWrapper">
@@ -172,7 +184,7 @@ class App extends React.Component {
             src={road_closures_icon}
             title="ROAD CLOSURES"
             onClick={() => this.toggle("showRoadClosures")}
-			Engaged={this.state.showRoadClosures}
+            Engaged={this.state.showRoadClosures}
           />
         </div>
       </div>
