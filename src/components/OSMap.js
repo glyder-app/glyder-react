@@ -1,7 +1,7 @@
 // @flow
 
 import React, { createRef, Component } from "react";
-import { Map, TileLayer, ImageOverlay, Marker, Popup } from "react-leaflet";
+import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import "../styles/OSMap.css"; // Tell Webpack that Toggle.js uses these styles
 import FirePerimeter from "./FirePerimeter.js";
 import FRLocations from "./FRLocations.js";
@@ -43,6 +43,7 @@ class OSMap extends Component {
 
   render() {
     // const position = [this.state.lat, this.state.lng];
+	// url form of new weather maps (which aren't free) "http://maps.openweathermap.org/maps/2.0/weather/HRD0/{z}/{x}/{y}?appid=b593b0ebcc8372e45bcb701185a33497"
     return (
       <Map
         center={this.state.locationLatlng}
@@ -63,6 +64,16 @@ class OSMap extends Component {
 		<TileLayer opacity={this.props.tempOpacity}
    		  attribution='Weather from <a href="https://openweathermap.org/">OpenWeatherMap</a>'
 		  url="https://tile.openweathermap.org/map/temp/{z}/{x}/{y}.png?appid=b593b0ebcc8372e45bcb701185a33497"
+		/>		
+		
+		<TileLayer opacity={this.props.precipitationOpacity}
+   		  attribution='Weather from <a href="https://openweathermap.org/">OpenWeatherMap</a>'
+		  url="https://tile.openweathermap.org/map/precipitation/{z}/{x}/{y}.png?appid=b593b0ebcc8372e45bcb701185a33497"
+		/>
+		
+		<TileLayer opacity={this.props.pressureOpacity}
+   		  attribution='Weather from <a href="https://openweathermap.org/">OpenWeatherMap</a>'
+		  url="https://tile.openweathermap.org/map/pressure/{z}/{x}/{y}.png?appid=b593b0ebcc8372e45bcb701185a33497"
 		/>
 
         {/* add a marker at the current location found  */}

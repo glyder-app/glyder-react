@@ -46,8 +46,8 @@ class ToggleIconAndTitle extends Component {
         <input
           className="component-ToggleIconAndTitle_Icon"
           type="image"
-		  style={{"border-color":this.isEngagedColor(), 
-				  "border-width":this.isEngagedWidth(),
+		  style={{"borderColor":this.isEngagedColor(), 
+				  "borderWidth":this.isEngagedWidth(),
 				  "width":this.isEngagedSize(),
 				  "height":this.isEngagedSize()
 				}}

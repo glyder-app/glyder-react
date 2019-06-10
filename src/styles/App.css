@@ -98,6 +98,10 @@
   background-color: rgba(255, 140, 0, 1);
 }
 
-#component-Panel_Color_HUMIDITY {
+#component-Panel_Color_PRECIPITATION {
+  background-color: rgba(0, 20, 200, 1);
+}
+
+#component-Panel_Color_PRESSURE {
   background-color: rgba(139, 139, 0, 1);
 }

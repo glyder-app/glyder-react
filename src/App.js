@@ -68,16 +68,8 @@ class App extends React.Component {
   //     });
   //   };
 
-  windSpeedOpacity = () => {
-    if (this.state.selectedPanel === 0) {
-      return 0.5;
-    } else {
-      return 0;
-    }
-  };
-
-  tempOpacity = () => {
-    if (this.state.selectedPanel === 2) {
+  opacity = key => {
+    if (this.state.selectedPanel === key) {
       return 0.5;
     } else {
       return 0;
@@ -111,7 +103,7 @@ class App extends React.Component {
 
   handleOverlayMenuClick(i) {
     const prevPanel = this.state.selectedPanel;
-    if (prevPanel == i) {
+    if (prevPanel === i) {
       this.setState({ selectedPanel: -1 });
     } else {
       this.setState({ selectedPanel: i });
@@ -139,8 +131,10 @@ class App extends React.Component {
             showRoadClosures={this.state.showRoadClosures}
             dragging={true}
             touchZoom={true}
-            windSpeedOpacity={this.windSpeedOpacity()}
-            tempOpacity={this.tempOpacity()}
+            windSpeedOpacity={this.opacity(0)}
+            tempOpacity={this.opacity(2)}
+            precipitationOpacity={this.opacity(3)}
+            pressureOpacity={this.opacity(4)}
           />
         </div>
         <div id="mainSearchBarWrapper">
@@ -151,7 +145,8 @@ class App extends React.Component {
               "WIND",
               "FUEL TYPE",
               "TEMPERATURE",
-              "HUMIDITY"
+              "PRECIPITATION",
+              "PRESSURE"
             ])}
           />
         </div>
