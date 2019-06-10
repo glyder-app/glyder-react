@@ -1,7 +1,5 @@
 import React from "react";
 import { Marker, Popup } from "react-leaflet";
-// import FRIcon from "../img/firefighter.png";
-import FRIcon from "./icon.js";
 
 function FRLocations(props) {
   const L = require("leaflet");
@@ -24,19 +22,19 @@ function FRLocations(props) {
       <Marker icon={FRIcon} position={{ lat: 39.7496, lng: -121.6219 }}>
         <Popup First Responder />
       </Marker>
-      <Marker icon={FRIcon} position={{ lat: 39.7486, lng: -121.6235 }}>
+      <Marker icon={FRIcon} position={{ lat: 39.7476, lng: -121.6245 }}>
         <Popup First Responder />
       </Marker>
-      <Marker icon={FRIcon} position={{ lat: 39.7489, lng: -121.6319 }}>
+      <Marker icon={FRIcon} position={{ lat: 39.7489, lng: -121.6459 }}>
         <Popup First Responder />
       </Marker>
-      <Marker icon={FRIcon} position={{ lat: 39.7597, lng: -121.6122 }}>
+      <Marker icon={FRIcon} position={{ lat: 39.7697, lng: -121.6122 }}>
         <Popup First Responder />
       </Marker>
       <Marker icon={PMIcon} position={{ lat: 39.7389, lng: -121.6319 }}>
         <Popup First Responder />
       </Marker>
-      <Marker icon={PMIcon} position={{ lat: 39.7589, lng: -121.6319 }}>
+      <Marker icon={PMIcon} position={{ lat: 39.7659, lng: -121.6319 }}>
         <Popup First Responder />
       </Marker>
     </div>
