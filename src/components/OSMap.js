@@ -2,8 +2,10 @@
 
 import React, { createRef, Component } from "react";
 import { Map, TileLayer, Marker, Popup } from "react-leaflet";
-import '../styles/OSMap.css'; // Tell Webpack that Toggle.js uses these styles
+import "../styles/OSMap.css"; // Tell Webpack that Toggle.js uses these styles
 import FirePerimeter from "./FirePerimeter.js";
+import FRLocations from "./FRLocations.js";
+import RoadClosurs from "./RoadClosures.js";
 
 class OSMap extends Component {
   state = {
@@ -12,6 +14,7 @@ class OSMap extends Component {
     zoom: 13,
     locationLatlng: { lat: 39.7596, lng: -121.6219 },
     hasLocatoin: true
+    // center:
   };
 
   //create a ref to the map compoenent mounted
@@ -24,6 +27,7 @@ class OSMap extends Component {
       hasLocation: true,
       locationLatlng: e.latlng
     });
+
     console.log("location found");
   };
 
@@ -33,18 +37,17 @@ class OSMap extends Component {
       if (map != null) {
         map.leafletElement.locate();
       }
-      console.log("finding location");
+      // console.log("finding location");
     }
   }
 
   render() {
-    const position = [this.state.lat, this.state.lng];
+    // const position = [this.state.lat, this.state.lng];
     return (
       <Map
-        center={position}
+        center={this.state.locationLatlng}
         zoom={this.state.zoom}
         ref={this.mapRef}
-        onClick={this.handleClick}
         onLocationfound={this.handleLocationFound}
       >
         <TileLayer
@@ -53,12 +56,18 @@ class OSMap extends Component {
         />
 
         {/* add a marker at the current location found  */}
-        <Marker position={this.state.locationLatlng}>
-          <Popup>My current location</Popup>
-        </Marker>
+        {this.props.showLocation ? (
+          <Marker position={this.state.locationLatlng}>
+            <Popup>My current location</Popup>
+          </Marker>
+        ) : (
+          <div />
+        )}
 
         <FirePerimeter show={this.props.showFire} />
         {/* <MyLocation /> */}
+        <FRLocations show={this.props.showFRLocations} />
+        <RoadClosurs show={this.props.showRoadClosures} />
       </Map>
     );
   }
