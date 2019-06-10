@@ -1,7 +1,7 @@
 // @flow
 
 import React, { createRef, Component } from "react";
-import { Map, TileLayer, Marker, Popup } from "react-leaflet";
+import { Map, TileLayer, ImageOverlay, Marker, Popup } from "react-leaflet";
 import "../styles/OSMap.css"; // Tell Webpack that Toggle.js uses these styles
 import FirePerimeter from "./FirePerimeter.js";
 import FRLocations from "./FRLocations.js";
@@ -54,6 +54,16 @@ class OSMap extends Component {
           attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+		
+		<TileLayer opacity={this.props.windSpeedOpacity}
+   		  attribution='Weather from <a href="https://openweathermap.org/">OpenWeatherMap</a>'
+		  url="https://tile.openweathermap.org/map/wind/{z}/{x}/{y}.png?appid=b593b0ebcc8372e45bcb701185a33497"
+		/>
+		
+		<TileLayer opacity={this.props.tempOpacity}
+   		  attribution='Weather from <a href="https://openweathermap.org/">OpenWeatherMap</a>'
+		  url="https://tile.openweathermap.org/map/temp/{z}/{x}/{y}.png?appid=b593b0ebcc8372e45bcb701185a33497"
+		/>
 
         {/* add a marker at the current location found  */}
         {this.props.showLocation ? (

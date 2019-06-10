@@ -8,14 +8,17 @@ import location_icon from "./img/location_icon.jpg";
 import FRIcon from "./img/firefighter.png";
 import data_toggle_icon from "./img/data_toggle_icon.png";
 import road_closures_icon from "./img/road_closures_icon.png";
+import Panel from "./components/Panel.js"
 
 class App extends React.Component {
   //   a state & a function to toggle fire
+  
   state = {
     showFire: true,
     showLocation: false,
     showFRLocations: false,
-    showRoadClosures: false
+    showRoadClosures: false,
+	selectedPanel: -1
   };
 
   toggle = key => this.setState({ [key]: !this.state[key] });
@@ -64,7 +67,49 @@ class App extends React.Component {
   //       latlng: e.latlng
   //     });
   //   };
+  
+  windSpeedOpacity = () => {
+	  if (this.state.selectedPanel === 0) {
+		  return 0.5;
+	  } else {
+		  return 0;
+	  }
+  }
 
+  tempOpacity = () => {
+	  if (this.state.selectedPanel === 2) {
+		  return 0.5;
+	  } else {
+		  return 0;
+	  }
+  }
+  
+  buildTable(panelNames) {
+  	  var table = [];
+	  const maxI = panelNames.length;
+	  for (let i = 0; i < maxI; i++) {
+		  // Panel Colors are an array of strings where each string is an rgba value
+		  // EX "rgba(255, 255, 255, 1)"
+		  const name = panelNames[i];
+		  const toggledOn = this.state.selectedPanel === i;
+		  table.push(
+			<tr key={i}><td>
+				{<Panel title={name} Engaged={toggledOn} onClick={() => this.handleOverlayMenuClick(i)}/>}	
+			</td></tr>
+		  );
+	  }
+	  return table;
+  }
+  
+  handleOverlayMenuClick(i) {
+	  const prevPanel = this.state.selectedPanel;
+	  if (prevPanel == i) {
+		  this.setState({selectedPanel: -1});
+	  } else {
+		  this.setState({selectedPanel: i});
+	  }
+  }
+  
   render() {
     //TODO: MAP -
     //	Fire Overlay
@@ -87,13 +132,15 @@ class App extends React.Component {
             mapState={this.state.mapState}
             dragging={true}
             touchZoom={true}
+			windSpeedOpacity={this.windSpeedOpacity()}
+			tempOpacity={this.tempOpacity()}
           />
         </div>
         <div id="mainSearchBarWrapper">
           <SearchBarWrapper
-            dataOverlayNames={["WIND", "FUEL TYPE", "TEMPERATURE", "HUMIDITY"]}
             iconSrc={data_toggle_icon}
             iconAlt="DATA"
+			table={this.buildTable(["WIND", "FUEL TYPE", "TEMPERATURE", "HUMIDITY"])}
           />
         </div>
         <div className="toggleFPWrapper">

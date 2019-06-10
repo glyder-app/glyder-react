@@ -41,8 +41,7 @@ class SearchBarWrapper extends Component {
           style={{ display: this.getMenuDisplay() }}
         >
           <DropDownMenu
-            id="DropDownDataOverlayMenu"
-            panelNames={this.props.dataOverlayNames}
+			table={this.props.table}
           />
         </div>
       </div>
