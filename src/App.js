@@ -14,24 +14,27 @@ class App extends React.Component {
   state = {
     showFire: true,
     showLocation: false,
-    showFRLocations: false
+    showFRLocations: false,
+    showRoadClosures: false
   };
 
-  toggleFire = () => {
-    this.setState({ showFire: !this.state.showFire });
-  };
+  toggle = key => this.setState({ [key]: !this.state[key] });
 
-  toggleLocation = () => {
-    this.setState({ showLocation: !this.state.showLocation });
-  };
+  //   toggleFire = () => {
+  //     this.setState({ showFire: !this.state.showFire });
+  //   };
 
-  toggleFRLocations = () => {
-    this.setState({ showFRLocations: !this.state.showFRLocations });
-  };
+  //   toggleLocation = () => {
+  //     this.setState({ showLocation: !this.state.showLocation });
+  //   };
 
-  toggleRoadClosures = () => {
-    this.setState({ showRoadClosures: !this.state.showRoadClosures });
-  };
+  //   toggleFRLocations = () => {
+  //     this.setState({ showFRLocations: !this.state.showFRLocations });
+  //   };
+
+  //   toggleRoadClosures = () => {
+  //     this.setState({ showRoadClosures: !this.state.showRoadClosures });
+  //   };
 
   //   toggleLocation = () => {
   //     this.setState({ showLocation: !this.state.showLocation });
@@ -81,6 +84,7 @@ class App extends React.Component {
             showLocation={this.state.showLocation}
             showFRLocations={this.state.showFRLocations}
             showRoadClosures={this.state.showRoadClosures}
+            mapState={this.state.mapState}
             dragging={true}
             touchZoom={true}
           />
@@ -96,28 +100,28 @@ class App extends React.Component {
           <ToggleIconAndTitle
             src={fire_icon}
             title="FIRE PERIMETER"
-            onClick={this.toggleFire}
+            onClick={() => this.toggle("showFire")}
           />
         </div>
         <div className="toggleFRLWrapper">
           <ToggleIconAndTitle
             src={FRIcon}
             title="RESPONDER LOCATIONS"
-            onClick={this.toggleFRLocations}
+            onClick={() => this.toggle("showFRLocations")}
           />
         </div>
         <div className="toggleRLWrapper">
           <ToggleIconAndTitle
             src={location_icon}
             title="MY CURRENT LOCATIONS"
-            onClick={this.toggleLocation}
+            onClick={() => this.toggle("showLocation")}
           />
         </div>
         <div className="toggleRCWrapper">
           <ToggleIconAndTitle
             src={road_closures_icon}
             title="ROAD CLOSURES"
-            onClick={this.toggleRoadClosures}
+            onClick={() => this.toggle("showRoadClosures")}
           />
         </div>
       </div>
