@@ -12,7 +12,8 @@ class App extends React.Component {
   //   a state & a function to toggle fire
   state = {
     showFire: true,
-    showLocation: false
+    showLocation: false,
+	showClosures: false
   };
 
   toggleFire = () => {
@@ -21,6 +22,10 @@ class App extends React.Component {
 
   toggleLocation = () => {
     this.setState({ showLocation: !this.state.showLocation });
+  };
+  
+  toggleClosures = () => {
+    this.setState({ showClosures: !this.state.showClosures });
   };
 
   //   state = {
@@ -85,6 +90,7 @@ class App extends React.Component {
               src={fire_icon}
               title="FIRE PERIMETER"
               onClick={this.toggleFire}
+			  Engaged={this.state.showFire}
             />
           </div>
           {/* <div className="toggleRLWrapper">
@@ -98,12 +104,15 @@ class App extends React.Component {
               src={location_icon}
               title="MY CURRENT LOCATIONS"
               onClick={this.toggleLocation}
+			  Engaged={this.state.showLocation}
             />
           </div>
           <div className="toggleRCWrapper">
             <ToggleIconAndTitle
               src={road_closures_icon}
               title="ROAD CLOSURES"
+			  onClick={this.toggleClosures}
+			  Engaged={this.state.showClosures}
             />
           </div>
         </div>
