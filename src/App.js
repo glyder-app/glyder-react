@@ -5,6 +5,7 @@ import OSMap from "./components/OSMap.js";
 import SearchBarWrapper from "./components/SearchBarWrapper.js";
 import fire_icon from "./img/fire_icon.jpg";
 import location_icon from "./img/location_icon.jpg";
+import FRIcon from "./img/firefighter.png";
 import data_toggle_icon from "./img/data_toggle_icon.png";
 import road_closures_icon from "./img/road_closures_icon.png";
 
@@ -26,6 +27,10 @@ class App extends React.Component {
 
   toggleFRLocations = () => {
     this.setState({ showFRLocations: !this.state.showFRLocations });
+  };
+
+  toggleRoadClosures = () => {
+    this.setState({ showRoadClosures: !this.state.showRoadClosures });
   };
 
   //   toggleLocation = () => {
@@ -75,6 +80,7 @@ class App extends React.Component {
             showFire={this.state.showFire}
             showLocation={this.state.showLocation}
             showFRLocations={this.state.showFRLocations}
+            showRoadClosures={this.state.showRoadClosures}
             dragging={true}
             touchZoom={true}
           />
@@ -95,7 +101,7 @@ class App extends React.Component {
         </div>
         <div className="toggleFRLWrapper">
           <ToggleIconAndTitle
-            src={location_icon}
+            src={FRIcon}
             title="RESPONDER LOCATIONS"
             onClick={this.toggleFRLocations}
           />
@@ -108,7 +114,11 @@ class App extends React.Component {
           />
         </div>
         <div className="toggleRCWrapper">
-          <ToggleIconAndTitle src={road_closures_icon} title="ROAD CLOSURES" />
+          <ToggleIconAndTitle
+            src={road_closures_icon}
+            title="ROAD CLOSURES"
+            onClick={this.toggleRoadClosures}
+          />
         </div>
       </div>
     );

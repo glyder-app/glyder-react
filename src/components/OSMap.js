@@ -5,6 +5,7 @@ import { Map, TileLayer, Marker, Popup } from "react-leaflet";
 import "../styles/OSMap.css"; // Tell Webpack that Toggle.js uses these styles
 import FirePerimeter from "./FirePerimeter.js";
 import FRLocations from "./FRLocations.js";
+import RoadClosurs from "./RoadClosures.js";
 
 class OSMap extends Component {
   state = {
@@ -66,6 +67,7 @@ class OSMap extends Component {
         <FirePerimeter show={this.props.showFire} />
         {/* <MyLocation /> */}
         <FRLocations show={this.props.showFRLocations} />
+        <RoadClosurs show={this.props.showRoadClosures} />
       </Map>
     );
   }
