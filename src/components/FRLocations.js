@@ -19,22 +19,23 @@ function FRLocations(props) {
 
   return props.show ? (
     <div>
-      <Marker icon={FRIcon} position={{ lat: 39.7496, lng: -121.6219 }}>
+      39.9016, -122.052
+      <Marker icon={FRIcon} position={{ lat: 39.7163, lng: -121.7816 }}>
         <Popup First Responder />
       </Marker>
-      <Marker icon={FRIcon} position={{ lat: 39.7476, lng: -121.6245 }}>
+      <Marker icon={FRIcon} position={{ lat: 39.6239, lng: -121.7422 }}>
         <Popup First Responder />
       </Marker>
-      <Marker icon={FRIcon} position={{ lat: 39.7489, lng: -121.6459 }}>
+      <Marker icon={FRIcon} position={{ lat: 39.6238, lng: -121.5455 }}>
         <Popup First Responder />
       </Marker>
-      <Marker icon={FRIcon} position={{ lat: 39.7697, lng: -121.6122 }}>
+      <Marker icon={FRIcon} position={{ lat: 39.6359, lng: -121.4228 }}>
         <Popup First Responder />
       </Marker>
-      <Marker icon={PMIcon} position={{ lat: 39.7389, lng: -121.6319 }}>
+      <Marker icon={PMIcon} position={{ lat: 39.5135, lng: -121.6859 }}>
         <Popup First Responder />
       </Marker>
-      <Marker icon={PMIcon} position={{ lat: 39.7659, lng: -121.6319 }}>
+      <Marker icon={PMIcon} position={{ lat: 39.7059, lng: -121.8319 }}>
         <Popup First Responder />
       </Marker>
     </div>
