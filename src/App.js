@@ -22,7 +22,7 @@ class App extends React.Component {
   };
   
   overlayNames = ["WIND", "TEMPERATURE", "PRECIPITATION", "PRESSURE"];
-  overlayColors = ["#787878", "#ff8C00", "#0014C8", "#8B8B00"]
+  overlayColors = ["#0055CC", "#ff8C00", "#ADD8E6", "#DDDD00"]
   //fuel type: #8B008B
 
   toggle = key => this.setState({ [key]: !this.state[key] });
@@ -73,7 +73,6 @@ class App extends React.Component {
   //   };
 
   opacity = key => {
-<<<<<<< HEAD
 	  if (this.state.selectedPanel === key) {
 		  return 0.5;
 	  } else {
