@@ -12,24 +12,24 @@ function RoadClosures(props) {
 
   return props.show ? (
     <div>
-      <Marker icon={RCIcon} position={{ lat: 39.7496, lng: -121.6219 }}>
+      <Marker icon={RCIcon} position={{ lat: 39.7123, lng: -121.8045 }}>
         <Popup First Responder />
       </Marker>
-      <Marker icon={RCIcon} position={{ lat: 39.7386, lng: -121.6035 }}>
+      <Marker icon={RCIcon} position={{ lat: 39.6215, lng: -121.6935 }}>
         <Popup First Responder />
       </Marker>
-      <Marker icon={RCIcon} position={{ lat: 39.7189, lng: -121.6319 }}>
+      <Marker icon={RCIcon} position={{ lat: 39.6202, lng: -121.5956 }}>
         <Popup First Responder />
       </Marker>
-      <Marker icon={RCIcon} position={{ lat: 39.7127, lng: -121.6122 }}>
+      <Marker icon={RCIcon} position={{ lat: 39.9051, lng: -121.3469 }}>
         <Popup First Responder />
       </Marker>
-      <Marker icon={RCIcon} position={{ lat: 39.7379, lng: -121.6359 }}>
+      {/* <Marker icon={RCIcon} position={{ lat: 39.7379, lng: -121.6359 }}>
         <Popup First Responder />
       </Marker>
       <Marker icon={RCIcon} position={{ lat: 39.7689, lng: -121.6219 }}>
         <Popup First Responder />
-      </Marker>
+      </Marker> */}
     </div>
   ) : (
     <div />
