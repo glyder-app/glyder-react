@@ -20,6 +20,10 @@ class App extends React.Component {
     showRoadClosures: false,
 	selectedPanel: -1
   };
+  
+  overlayNames = ["WIND", "TEMPERATURE", "PRECIPITATION", "PRESSURE"];
+  overlayColors = ["#787878", "#ff8C00", "#0014C8", "#8B8B00"]
+  //fuel type: #8B008B
 
   toggle = key => this.setState({ [key]: !this.state[key] });
   
@@ -76,17 +80,42 @@ class App extends React.Component {
 	  }
   }
   
-  buildTable(panelNames) {
+  selectedOverlay() {
+	  if (this.state.selectedPanel === -1) {
+		  return "";
+	  } else {
+		  return this.overlayNames[this.state.selectedPanel];
+	  }
+  }
+  
+  selectedOverlayColor() {
+	  if (this.state.selectedPanel === -1) {
+		  return "";
+	  } else {
+		  return this.overlayColors[this.state.selectedPanel];
+	  }
+  }
+  
+  overlayEngaged() {
+	  if (this.state.selectedPanel === -1) {
+		  return false;
+	  } else {
+		  return true;
+	  }
+  }
+  
+  buildTable(panelNames, panelColors) {
   	  var table = [];
 	  const maxI = panelNames.length;
 	  for (let i = 0; i < maxI; i++) {
 		  // Panel Colors are an array of strings where each string is an rgba value
 		  // EX "rgba(255, 255, 255, 1)"
 		  const name = panelNames[i];
+		  const color = panelColors[i];
 		  const toggledOn = this.state.selectedPanel === i;
 		  table.push(
 			<tr key={i}><td>
-				{<Panel title={name} Engaged={toggledOn} onClick={() => this.handleOverlayMenuClick(i)}/>}	
+				{<Panel title={name} Engaged={toggledOn} color={color} onClick={() => this.handleOverlayMenuClick(i)}/>}	
 			</td></tr>
 		  );
 	  }
@@ -125,16 +154,19 @@ class App extends React.Component {
             dragging={true}
             touchZoom={true}
 			windSpeedOpacity={this.opacity(0)}
-			tempOpacity={this.opacity(2)}
-			precipitationOpacity={this.opacity(3)}
-			pressureOpacity={this.opacity(4)}
+			tempOpacity={this.opacity(1)}
+			precipitationOpacity={this.opacity(2)}
+			pressureOpacity={this.opacity(3)}
           />
         </div>
         <div id="mainSearchBarWrapper">
           <SearchBarWrapper
             iconSrc={data_toggle_icon}
             iconAlt="DATA"
-			table={this.buildTable(["WIND", "FUEL TYPE", "TEMPERATURE", "PRECIPITATION", "PRESSURE"])}
+			table={this.buildTable(this.overlayNames, this.overlayColors)}
+			selectedOverlay={this.selectedOverlay()}
+			Engaged={this.overlayEngaged()}
+			selectedOverlayColor={this.selectedOverlayColor()}
           />
         </div>
         <div className="toggleFPWrapper">

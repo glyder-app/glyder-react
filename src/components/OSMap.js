@@ -48,6 +48,7 @@ class OSMap extends Component {
       <Map
         center={this.state.locationLatlng}
         zoom={this.state.zoom}
+		zoomControl={false}
         ref={this.mapRef}
         onLocationfound={this.handleLocationFound}
       >
@@ -75,7 +76,7 @@ class OSMap extends Component {
    		  attribution='Weather from <a href="https://openweathermap.org/">OpenWeatherMap</a>'
 		  url="https://tile.openweathermap.org/map/pressure/{z}/{x}/{y}.png?appid=b593b0ebcc8372e45bcb701185a33497"
 		/>
-
+		
         {/* add a marker at the current location found  */}
         {this.props.showLocation ? (
           <Marker position={this.state.locationLatlng}>

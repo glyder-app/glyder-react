@@ -43,3 +43,7 @@
 	display: inline-block;
 	z-index: 3;
 }
+
+.component-ToggleIconAndTitle_Icon:focus {
+	outline: none;
+}

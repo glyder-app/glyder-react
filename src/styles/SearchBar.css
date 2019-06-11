@@ -1,25 +1,42 @@
 .component-SearchBar {
-	background-color: rgba(255, 255, 255, 0.75);
+	background-color: rgba(255, 255, 255, 1);
 	padding: 5px;
 	box-shadow: 0px 0px 5px 0px #0009;
 	border-radius: 15px;
 	width: 100%;
 	z-index: 2;
-	height: 40px;
+	height: 25px;
 	border-color: rgba(75, 75, 75, 0.6);
 	border-style: solid;
 	border-width: 1px;
 }
 
+.component-SelectedOverlay {
+	float: left;
+	z-index: 3;
+	margin-top: 1px;
+	font-family: roboto;
+	font-size: 16px;
+	margin-left: 4px;
+	margin-bottom: 0px;
+	display: inline-block;
+	background-color: rgba(150, 150, 150, 1);
+	border-radius: 4px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgba(30, 30, 30, 0.6);
+    box-shadow: 0px 0px 2px 0px #0009;
+	padding: 2px;
+}
+
 .component-Separator {
 	width: 3px;
-	height: 40px;
+	height: 25px;
 	background-color: rgba(120, 120, 120, 1);
-	box-shadow: 0px 0px 5px 0px #0009;
+	box-shadow: 0px 0px 3px 0px #0009;
 	border-radius: 2px;
 	display: inline-block;
 	margin-left: 10px;
-	margin-right: 7px;
 	float: left;
 	z-index: 3;
 }
@@ -28,19 +45,24 @@
 	background-color: rgba(100, 100, 100, 0);
 	border-style: none;
 	font-family: roboto;
-	font-size: 25px;
-	width: calc(100% - 100px);
+	font-size: 16px;
 	display: inline-block;
-	margin-top: 5px;
+	width: 50%;
+	margin-left: 10px;
+	margin-top: 3px;
 	color: black;
+}
+
+.component-SearchBarInput:focus {
+	outline: none;
 }
 
 .component-DropDownToggle {
 	display: inline-block;
 	border: 0px;
 	padding: 0px;
-	width: 40px;
-	height: 40px;
+	width: 25px;
+	height: 25px;
 	float:left;
 	margin-left: 2px;
 }
@@ -50,8 +72,7 @@
 	border-radius: 15px;
 	border-style: none;
 	font-family: roboto;
-	font-size: 25px;
-	width: calc(100% - 100px);
+	font-size: 16px;
 	display: inline-block;
 	margin-top: 5px;
 	margin-left: 10px;

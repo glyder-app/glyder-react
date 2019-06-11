@@ -34,6 +34,9 @@ class SearchBarWrapper extends Component {
             iconSrc={this.props.iconSrc}
             iconAlt={this.props.iconAlt}
             handleClick={() => this.handleClick()}
+			selectedOverlay={this.props.selectedOverlay}
+			Engaged={this.props.Engaged}
+			selectedOverlayColor={this.props.selectedOverlayColor}
           />
         </div>
         <div

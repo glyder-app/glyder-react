@@ -3,6 +3,15 @@ import "../styles/SearchBar.css"; // Tell Webpack that Toggle.js uses these styl
 import ToggleIcon from "./ToggleIcon.js";
 
 class SearchBar extends Component {
+	
+  showOverlay() {
+	  if (this.props.Engaged) {
+		  return "inline-block";
+	  } else {
+		  return "none";
+	  }
+  }
+	
   render() {
     return (
       <div className="component-SearchBar">
@@ -13,6 +22,7 @@ class SearchBar extends Component {
             onClick={() => this.props.handleClick()}
           />
         </div>
+		<p className="component-SelectedOverlay" style={{display:this.showOverlay(), backgroundColor:this.props.selectedOverlayColor}}>{this.props.selectedOverlay}</p>
         <div className="component-Separator" />
         <input className="component-SearchBarInput" type="text" placeholder="Search"/>
       </div>

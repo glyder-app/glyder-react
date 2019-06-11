@@ -56,52 +56,32 @@
 .toggleRLWrapper {
   position: absolute;
   bottom: 20px;
-  right: 10px;
+  right: 18px;
 }
 
 .toggleFRLWrapper {
   position: absolute;
   bottom: 75px;
-  right: 10px;
+  right: 18px;
 }
 
 .toggleRCWrapper {
   position: absolute;
   /* align-self: right */
   bottom: 185px;
-  right: 10px;
+  right: 18px;
 }
 
 .toggleFPWrapper {
   position: absolute;
   bottom: 130px;
-  right: 10px;
+  right: 18px;
 }
 
 #mainSearchBarWrapper {
   position: absolute;
   top: 18px;
-  left: 50px;
-  right: 50px;
+  left: 18px;
+  right: 33px;
   display: inline-block;
-}
-
-#component-Panel_Color_WIND {
-  background-color: rgba(120, 120, 120, 1);
-}
-
-#component-Panel_Color_FUEL\ TYPE {
-  background-color: rgba(139, 0, 139, 1);
-}
-
-#component-Panel_Color_TEMPERATURE {
-  background-color: rgba(255, 140, 0, 1);
-}
-
-#component-Panel_Color_PRECIPITATION {
-  background-color: rgba(0, 20, 200, 1);
-}
-
-#component-Panel_Color_PRESSURE {
-  background-color: rgba(139, 139, 0, 1);
 }
