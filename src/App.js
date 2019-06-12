@@ -3,11 +3,11 @@ import "./styles/App.css";
 import ToggleIconAndTitle from "./components/ToggleIconAndTitle.js";
 import OSMap from "./components/OSMap.js";
 import SearchBarWrapper from "./components/SearchBarWrapper.js";
-import fire_icon from "./img/fire_icon.jpg";
-import location_icon from "./img/location_icon.jpg";
-import FRIcon from "./img/firefighter.png";
-import data_toggle_icon from "./img/data_toggle_icon.png";
-import road_closures_icon from "./img/road_closures_icon.png";
+import fire_icon from "./img/perimetericons/fireOn.png";
+import location_icon from "./img/perimetericons/locationOn.png";
+import FRIcon from "./img/perimetericons/firstResponderOn.png";
+import data_toggle_icon from "./img/perimetericons/menuOn.png";
+import road_closures_icon from "./img/perimetericons/roadClosuresOn.png";
 import Panel from "./components/Panel.js";
 
 class App extends React.Component {
