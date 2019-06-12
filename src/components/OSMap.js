@@ -20,6 +20,7 @@ class OSMap extends Component {
   //create a ref to the map compoenent mounted
   mapRef = createRef();
   map = this.mapRef.current;
+  apikey = "4a2dab7ba1df8c6201c34503fa4f315b";
 
   // functions for finding user's current location
   handleLocationFound = e => {
@@ -67,25 +68,25 @@ class OSMap extends Component {
         <TileLayer
           opacity={this.props.windSpeedOpacity}
           attribution='Weather from <a href="https://openweathermap.org/">OpenWeatherMap</a>'
-          url="https://tile.openweathermap.org/map/wind/{z}/{x}/{y}.png?appid=b593b0ebcc8372e45bcb701185a33497"
+          url="https://tile.openweathermap.org/map/wind/{z}/{x}/{y}.png?appid=4a2dab7ba1df8c6201c34503fa4f315b"
         />
 
         <TileLayer
           opacity={this.props.tempOpacity}
           attribution='Weather from <a href="https://openweathermap.org/">OpenWeatherMap</a>'
-          url="https://tile.openweathermap.org/map/temp/{z}/{x}/{y}.png?appid=b593b0ebcc8372e45bcb701185a33497"
+          url="https://tile.openweathermap.org/map/temp/{z}/{x}/{y}.png?appid=4a2dab7ba1df8c6201c34503fa4f315b"
         />
 
         <TileLayer
           opacity={this.props.precipitationOpacity}
           attribution='Weather from <a href="https://openweathermap.org/">OpenWeatherMap</a>'
-          url="https://tile.openweathermap.org/map/precipitation/{z}/{x}/{y}.png?appid=b593b0ebcc8372e45bcb701185a33497"
+          url="https://tile.openweathermap.org/map/precipitation/{z}/{x}/{y}.png?appid=4a2dab7ba1df8c6201c34503fa4f315b"
         />
 
         <TileLayer
           opacity={this.props.pressureOpacity}
           attribution='Weather from <a href="https://openweathermap.org/">OpenWeatherMap</a>'
-          url="https://tile.openweathermap.org/map/pressure/{z}/{x}/{y}.png?appid=b593b0ebcc8372e45bcb701185a33497"
+          url="https://tile.openweathermap.org/map/pressure/{z}/{x}/{y}.png?appid=4a2dab7ba1df8c6201c34503fa4f315b"
         />
 
         {/* add a marker at the current location found  */}
