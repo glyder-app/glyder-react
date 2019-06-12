@@ -11,6 +11,14 @@ class ToggleIconAndTitle extends Component {
 	  this.isEngagedSize = this.isEngagedSize.bind(this);
   }
   
+  getURL() {
+	  if (this.props.Engaged) {
+		  return this.props.srcOn;
+	  } else {
+		  return this.props.srcOff;
+	  }
+  }
+  
   isEngagedColor() {
 	  if (this.props.Engaged) {
 		  return "rgba(255, 120, 0, 1)";
@@ -51,7 +59,7 @@ class ToggleIconAndTitle extends Component {
 				  "width":this.isEngagedSize(),
 				  "height":this.isEngagedSize()
 				}}
-          src={this.props.src}
+          src={this.getURL()}
           alt={this.props.title}
         />
       </div>

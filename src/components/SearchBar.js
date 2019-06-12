@@ -11,13 +11,21 @@ class SearchBar extends Component {
 		  return "none";
 	  }
   }
+  
+  getURL() {
+	  if (this.props.menuOpen) {
+		  return this.props.iconSrcOn;
+	  } else {
+		  return this.props.iconSrcOff;
+	  }
+  }
 	
   render() {
     return (
       <div className="component-SearchBar">
         <div className="component-DropDownToggle">
           <ToggleIcon
-            src={this.props.iconSrc}
+            src={this.getURL()}
             title={this.props.iconAlt}
             onClick={() => this.props.handleClick()}
           />

@@ -31,12 +31,15 @@ class SearchBarWrapper extends Component {
       <div className="SearchBarWrapper">
         <div className="SearchBarHolder">
           <SearchBar
-            iconSrc={this.props.iconSrc}
+            iconSrcOn={this.props.iconSrcOn}
+            iconSrcOff={this.props.iconSrcOff}
             iconAlt={this.props.iconAlt}
             handleClick={() => this.handleClick()}
 			selectedOverlay={this.props.selectedOverlay}
+			menuOpen={this.state.isToggleOn}
 			Engaged={this.props.Engaged}
 			selectedOverlayColor={this.props.selectedOverlayColor}
+			
           />
         </div>
         <div

@@ -3,11 +3,16 @@ import "./styles/App.css";
 import ToggleIconAndTitle from "./components/ToggleIconAndTitle.js";
 import OSMap from "./components/OSMap.js";
 import SearchBarWrapper from "./components/SearchBarWrapper.js";
-import fire_icon from "./img/perimetericons/fireOn.png";
-import location_icon from "./img/perimetericons/locationOn.png";
-import FRIcon from "./img/perimetericons/firstResponderOn.png";
-import data_toggle_icon from "./img/perimetericons/menuOn.png";
-import road_closures_icon from "./img/perimetericons/roadClosuresOn.png";
+import fire_icon_on from "./img/perimetericons/fireOn.png";
+import fire_icon_off from "./img/perimetericons/fireOff.png";
+import location_icon_on from "./img/perimetericons/locationOn.png";
+import location_icon_off from "./img/perimetericons/locationOff.png";
+import fr_icon_on from "./img/perimetericons/firstResponderOn.png";
+import fr_icon_off from "./img/perimetericons/firstResponderOff.png";
+import data_toggle_icon_on from "./img/perimetericons/menuOn.png";
+import data_toggle_icon_off from "./img/perimetericons/menuOff.png";
+import road_closures_icon_on from "./img/perimetericons/roadClosuresOn.png";
+import road_closures_icon_off from "./img/perimetericons/roadClosuresOff.png";
 import Panel from "./components/Panel.js";
 
 class App extends React.Component {
@@ -165,7 +170,8 @@ class App extends React.Component {
         </div>
         <div id="mainSearchBarWrapper">
           <SearchBarWrapper
-            iconSrc={data_toggle_icon}
+            iconSrcOn={data_toggle_icon_on}
+			iconSrcOff={data_toggle_icon_off}
             iconAlt="DATA"
 			table={this.buildTable(this.overlayNames, this.overlayColors)}
 			selectedOverlay={this.selectedOverlay()}
@@ -175,7 +181,8 @@ class App extends React.Component {
         </div>
         <div className="toggleFPWrapper">
           <ToggleIconAndTitle
-            src={fire_icon}
+            srcOn={fire_icon_on}
+			srcOff={fire_icon_off}
             title="FIRE PERIMETER"
             onClick={() => this.toggle("showFire")}
             Engaged={this.state.showFire}
@@ -183,7 +190,8 @@ class App extends React.Component {
         </div>
         <div className="toggleFRLWrapper">
           <ToggleIconAndTitle
-            src={FRIcon}
+            srcOn={fr_icon_on}
+			srcOff={fr_icon_off}
             title="RESPONDER LOCATIONS"
             onClick={() => this.toggle("showFRLocations")}
             Engaged={this.state.showFRLocations}
@@ -191,7 +199,8 @@ class App extends React.Component {
         </div>
         <div className="toggleRLWrapper">
           <ToggleIconAndTitle
-            src={location_icon}
+            srcOn={location_icon_on}
+			srcOff={location_icon_off}
             title="MY LOCATION"
             onClick={() => this.toggle("showLocation")}
             Engaged={this.state.showLocation}
@@ -199,7 +208,8 @@ class App extends React.Component {
         </div>
         <div className="toggleRCWrapper">
           <ToggleIconAndTitle
-            src={road_closures_icon}
+            srcOn={road_closures_icon_on}
+			srcOff={road_closures_icon_off}
             title="ROAD CLOSURES"
             onClick={() => this.toggle("showRoadClosures")}
             Engaged={this.state.showRoadClosures}
