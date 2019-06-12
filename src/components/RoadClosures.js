@@ -4,8 +4,8 @@ import { Marker, Popup } from "react-leaflet";
 function RoadClosures(props) {
   const L = require("leaflet");
   const RCIcon = new L.Icon({
-    iconUrl: require("../img/road_closures_icon.png"),
-    iconRetinaUrl: require("../img/road_closures_icon.png"),
+    iconUrl: require("../img/perimetericons/roadClosuresOff.png"),
+    iconRetinaUrl: require("../img/perimetericons/roadClosuresOff.png"),
     iconSize: new L.Point(30, 30),
     className: "leaflet-div-icon"
   });

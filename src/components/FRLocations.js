@@ -4,15 +4,15 @@ import { Marker, Popup } from "react-leaflet";
 function FRLocations(props) {
   const L = require("leaflet");
   const FRIcon = new L.Icon({
-    iconUrl: require("../img/firefighter.png"),
-    iconRetinaUrl: require("../img/firefighter.png"),
+    iconUrl: require("../img/perimetericons/firstResponderOn.png"),
+    iconRetinaUrl: require("../img/perimetericons/firstResponderOn.png"),
     iconSize: new L.Point(30, 30),
     className: "leaflet-div-icon"
   });
 
   const PMIcon = new L.Icon({
-    iconUrl: require("../img/police.png"),
-    iconRetinaUrl: require("../img/police.png"),
+    iconUrl: require("../img/perimetericons/firstResponderOff.png"),
+    iconRetinaUrl: require("../img/perimetericons/firstResponderOff.png"),
     iconSize: new L.Point(30, 30),
     className: "leaflet-div-icon"
   });
